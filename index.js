@@ -34,7 +34,7 @@ function validatePassword(password1, password2){
     }
 }
 
-// 1st Function
+// 2nd Function
 function reversePassword(password){
     var len = password.length;
     var reversed =  "";
@@ -44,8 +44,27 @@ function reversePassword(password){
         reversed = reversed.concat(password[i]);
     }
 
-    console.log(reversed);
+    return reversed;
 }
 
+// 3rd Function
+function storePassword(name, password1, password2){
+    // Initialize new password as password1 
+    var newPassword = password1
+    // Check if password matches
+    if (validatePassword(password1, password2)){
+        newPassword = reversePassword(password1)
+    }
+    const object = {
+        name: name,
+        newpassword: newPassword
+    }
+
+    return object;
+}
+
+
 console.log(validatePassword("Pass1234", "Pass1234"));
-reversePassword("Pass1234");
+console.log(reversePassword("Pass1234"));
+console.log(storePassword("John", "Pass1234", "Pass1234"));
+console.log(storePassword("John", "Pass123", "Pass12345"));
