@@ -34,4 +34,18 @@ function validatePassword(password1, password2){
     }
 }
 
-console.log(validatePassword("HELLOs1111", "HELLOs1111"));
+// 1st Function
+function reversePassword(password){
+    var len = password.length;
+    var reversed =  "";
+
+    // Reverse the string using concatenation from the end in reverse
+    for (let i = len-1; i >= 0; i--){
+        reversed = reversed.concat(password[i]);
+    }
+
+    console.log(reversed);
+}
+
+console.log(validatePassword("Pass1234", "Pass1234"));
+reversePassword("Pass1234");
